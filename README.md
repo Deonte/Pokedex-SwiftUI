@@ -6,5 +6,5 @@ This application utilizes a local database used to display a list view of Pokemo
 
 ## Screens
 
-### Light Mode
+
 ![Pokedex-SwiftUI](gitAssets/pokedexApp.gif)          ![Pokedex-SwiftUI](gitAssets/pokedexApp-darkmode.gif)
