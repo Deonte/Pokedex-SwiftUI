@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @StateObject var pokemonVM = PokemonViewModel()
+    @StateObject var favoritesVM = FavoritesViewModel()
+    
     var body: some View {
         TabView {
             NavigationView {
-                PokemonView()
+                PokemonView(pokemonVM: pokemonVM, favoritesVM: favoritesVM)
             }
             .tabItem {
-                Text("Pokemon")
-                Image(TabImage.pokemon)
+                Text(Constants.Text.pokemon.rawValue.capitalized)
+                Image(Constants.Symbol.pokemon)
                     .renderingMode(.template)
             }
             
-            FavoritesView()
+            FavoritesView(viewModel: favoritesVM)
                 .tabItem {
-                    Text("Favorites")
-                    Image(systemName: "star.fill")
+                    Text(Constants.Text.favorites.rawValue.capitalized)
+                    Image(systemName: Constants.Symbol.starFilled)
                 }
         }
     }

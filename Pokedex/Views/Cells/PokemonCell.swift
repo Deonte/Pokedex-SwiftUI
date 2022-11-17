@@ -9,8 +9,9 @@ import SwiftUI
 import Kingfisher
 
 struct PokemonCell: View {
-    let pokemon: FavoritePokemon
-      
+    @Binding var pokemon: FavorablePokemon
+    @ObservedObject var favoritesVM: FavoritesViewModel
+    
     var body: some View {
         HStack {
             KFImage(URL(string: pokemon.imageUrl))
@@ -25,6 +26,7 @@ struct PokemonCell: View {
                         .foregroundColor(Color(.label))
                         .font(.system(size: 28, weight: .medium))
                         .frame(height: 30, alignment: .leading)
+                    
                     if pokemon.isFavorite {
                         Image(systemName: "star.fill")
                             .resizable()
@@ -52,6 +54,6 @@ struct PokemonCell: View {
 
 struct PokemonCell_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonCell(pokemon: MockData.pokemon)
+        PokemonCell(pokemon: .constant(MockData.pokemon), favoritesVM: FavoritesViewModel())
     }
 }

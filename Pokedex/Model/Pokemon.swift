@@ -15,9 +15,9 @@ struct Pokemon: Identifiable, Codable, Hashable {
     let description: String
 }
 
-struct FavoritePokemon: Identifiable, Codable, Hashable {
+struct FavorablePokemon: Identifiable, Codable, Hashable, Equatable {
     let id: Int
-    let name: String
+    var name: String
     let type: String
     let imageUrl: String
     let description: String

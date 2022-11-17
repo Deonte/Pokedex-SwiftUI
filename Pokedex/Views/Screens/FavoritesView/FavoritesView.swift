@@ -8,39 +8,33 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @EnvironmentObject var modelData: DataLoader
-    @State private var showFavoritesOnly = true
-    @State var favorites: [FavoritePokemon] = []
-
-    var filteredPokemon: [FavoritePokemon] {
-        modelData.pokemon.filter { pokemon in !showFavoritesOnly || pokemon.isFavorite }
-    }
+    @ObservedObject var viewModel: FavoritesViewModel
     
     var body: some View {
         NavigationView {
-            if filteredPokemon.isEmpty {
+            if viewModel.favoritePokemon.isEmpty {
                 EmptyStateView()
-                    .navigationTitle("Favorites ♥️")
+                    .navigationTitle(Constants.Title.favorites)
             }  else {
                 List {
-                    ForEach(filteredPokemon) { favorite in
-                        NavigationLink( destination: PokemonDetailView(pokemon: favorite),
+                    ForEach($viewModel.favoritePokemon) { favorite in
+                        NavigationLink(destination: PokemonDetailView(pokemon: favorite, favoritesVM: viewModel),
                             label: {
-                                PokemonCell(pokemon: favorite)
+                            PokemonCell(pokemon: favorite, favoritesVM: viewModel)
                             })
                     }
                 }
-                .navigationTitle("Favorites ♥️")
+                .listStyle(.plain)
+                .navigationTitle(Constants.Title.favorites)
             }
         }
     }
-    
    
 }
 
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritesView()
-            .environmentObject(DataLoader())
+        FavoritesView(viewModel: FavoritesViewModel())
+            .environmentObject(PokemonViewModel())
     }
 }

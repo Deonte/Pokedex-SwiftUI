@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MockData {
-    static let pokemon = FavoritePokemon (
+    static let pokemon = FavorablePokemon (
         id: 6,
         name: "Charizard",
         type: "fire",

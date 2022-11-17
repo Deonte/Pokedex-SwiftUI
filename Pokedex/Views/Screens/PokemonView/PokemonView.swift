@@ -8,28 +8,27 @@
 import SwiftUI
 
 struct PokemonView: View {
-    @EnvironmentObject var modelData: DataLoader
-
-    var filteredPokemon: [FavoritePokemon] {
-        modelData.pokemon.filter { pokemon in !pokemon.isFavorite || pokemon.isFavorite }
-    }
+    @ObservedObject var pokemonVM: PokemonViewModel
+    @ObservedObject var favoritesVM: FavoritesViewModel
     
     var body: some View {
         List {
-            ForEach(filteredPokemon) { pokemon in
-                NavigationLink( destination: PokemonDetailView(pokemon: pokemon),
-                    label: {
-                        PokemonCell(pokemon: pokemon)
-                    })
+            ForEach($pokemonVM.pokemon) { pokemon in
+                NavigationLink(
+                    destination:
+                        PokemonDetailView(pokemon: pokemon,
+                                          favoritesVM: favoritesVM)
+                    , label: { PokemonCell(pokemon: pokemon, favoritesVM: favoritesVM) })
+                
             }
         }
-        .navigationTitle("Pokemon")
+        .listStyle(.plain)
+        .navigationTitle(Constants.Title.pokemon)
     }
 }
 
 struct PokemonView_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonView()
-            .environmentObject(DataLoader())
+        PokemonView(pokemonVM: PokemonViewModel(), favoritesVM: FavoritesViewModel())
     }
 }

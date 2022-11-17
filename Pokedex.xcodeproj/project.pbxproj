@@ -18,14 +18,13 @@
 		FD77D582266C0FF400745E18 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D581266C0FF400745E18 /* Pokemon.swift */; };
 		FD77D587266C143700745E18 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D586266C143700745E18 /* MockData.swift */; };
 		FD77D58D266C2D3E00745E18 /* Pokemon.json in Resources */ = {isa = PBXBuildFile; fileRef = FD77D58C266C2D3E00745E18 /* Pokemon.json */; };
-		FD77D58F266C2F6D00745E18 /* JSONDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D58E266C2F6D00745E18 /* JSONDataLoader.swift */; };
+		FD77D58F266C2F6D00745E18 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D58E266C2F6D00745E18 /* PokemonViewModel.swift */; };
 		FD77D592266C343700745E18 /* Formattable+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D591266C343700745E18 /* Formattable+ext.swift */; };
 		FD77D595266C37D200745E18 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FD77D594266C37D200745E18 /* Kingfisher */; };
 		FD77D599266C42CB00745E18 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D598266C42CB00745E18 /* FavoritesView.swift */; };
 		FD77D59D266C66BB00745E18 /* Strings+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D59C266C66BB00745E18 /* Strings+ext.swift */; };
 		FD77D59F266D5C1200745E18 /* PokeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D59E266D5C1200745E18 /* PokeError.swift */; };
-		FD77D5A1266D5C3300745E18 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D5A0266D5C3300745E18 /* PersistenceManager.swift */; };
-		FD77D5A4266D800700745E18 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D5A3266D800700745E18 /* FavoriteButton.swift */; };
+		FD77D5A1266D5C3300745E18 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D5A0266D5C3300745E18 /* FavoritesViewModel.swift */; };
 		FD77D5A7266D881900745E18 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77D5A6266D881900745E18 /* EmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,13 +42,12 @@
 		FD77D581266C0FF400745E18 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		FD77D586266C143700745E18 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		FD77D58C266C2D3E00745E18 /* Pokemon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pokemon.json; sourceTree = "<group>"; };
-		FD77D58E266C2F6D00745E18 /* JSONDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataLoader.swift; sourceTree = "<group>"; };
+		FD77D58E266C2F6D00745E18 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
 		FD77D591266C343700745E18 /* Formattable+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formattable+ext.swift"; sourceTree = "<group>"; };
 		FD77D598266C42CB00745E18 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		FD77D59C266C66BB00745E18 /* Strings+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+ext.swift"; sourceTree = "<group>"; };
 		FD77D59E266D5C1200745E18 /* PokeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeError.swift; sourceTree = "<group>"; };
-		FD77D5A0266D5C3300745E18 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
-		FD77D5A3266D800700745E18 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		FD77D5A0266D5C3300745E18 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		FD77D5A6266D881900745E18 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				FD77D5A5266D87FC00745E18 /* Custom Views */,
-				FD77D5A2266D7FED00745E18 /* Buttons */,
 				FD77D57B266C06CE00745E18 /* Cells */,
 				FD77D56F266C04F900745E18 /* Screens */,
 			);
@@ -157,8 +154,7 @@
 		FD77D583266C13D200745E18 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				FD77D5A0266D5C3300745E18 /* PersistenceManager.swift */,
-				FD77D58E266C2F6D00745E18 /* JSONDataLoader.swift */,
+				FD77D5A0266D5C3300745E18 /* FavoritesViewModel.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -166,6 +162,7 @@
 		FD77D588266C1E3600745E18 /* PokemonView */ = {
 			isa = PBXGroup;
 			children = (
+				FD77D58E266C2F6D00745E18 /* PokemonViewModel.swift */,
 				FD77D570266C051900745E18 /* PokemonView.swift */,
 			);
 			path = PokemonView;
@@ -202,14 +199,6 @@
 				FD77D598266C42CB00745E18 /* FavoritesView.swift */,
 			);
 			path = FavoritesView;
-			sourceTree = "<group>";
-		};
-		FD77D5A2266D7FED00745E18 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				FD77D5A3266D800700745E18 /* FavoriteButton.swift */,
-			);
-			path = Buttons;
 			sourceTree = "<group>";
 		};
 		FD77D5A5266D87FC00745E18 /* Custom Views */ = {
@@ -300,14 +289,13 @@
 				FD77D571266C051900745E18 /* PokemonView.swift in Sources */,
 				FD77D5A7266D881900745E18 /* EmptyStateView.swift in Sources */,
 				FD77D599266C42CB00745E18 /* FavoritesView.swift in Sources */,
-				FD77D5A4266D800700745E18 /* FavoriteButton.swift in Sources */,
 				FD77D59F266D5C1200745E18 /* PokeError.swift in Sources */,
 				FD77D57F266C0F9600745E18 /* PokemonDetailView.swift in Sources */,
-				FD77D58F266C2F6D00745E18 /* JSONDataLoader.swift in Sources */,
+				FD77D58F266C2F6D00745E18 /* PokemonViewModel.swift in Sources */,
 				FD77D55F266C045E00745E18 /* PokedexApp.swift in Sources */,
 				FD77D56E266C04C900745E18 /* MainTabView.swift in Sources */,
 				FD77D582266C0FF400745E18 /* Pokemon.swift in Sources */,
-				FD77D5A1266D5C3300745E18 /* PersistenceManager.swift in Sources */,
+				FD77D5A1266D5C3300745E18 /* FavoritesViewModel.swift in Sources */,
 				FD77D57D266C06EE00745E18 /* PokemonCell.swift in Sources */,
 				FD77D587266C143700745E18 /* MockData.swift in Sources */,
 				FD77D59D266C66BB00745E18 /* Strings+ext.swift in Sources */,
@@ -444,7 +432,7 @@
 				DEVELOPMENT_TEAM = 75LCH6D4U5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Pokedex/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,7 +454,7 @@
 				DEVELOPMENT_TEAM = 75LCH6D4U5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Pokedex/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

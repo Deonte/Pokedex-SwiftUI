@@ -20,11 +20,10 @@ struct EmptyStateView: View {
                 
                 Spacer()
 
-                Image("pokemon")
+                Image(Constants.Text.pokemon.rawValue)
                     .resizable()
                     .scaledToFit()
                     .offset(x: 100, y: 0)
-                    //.frame(width: 450, height: 450)
             }
         }
     }
