@@ -10,8 +10,7 @@ import Kingfisher
 
 struct PokemonCell: View {
     @Binding var pokemon: FavorablePokemon
-    @ObservedObject var favoritesVM: FavoritesViewModel
-    
+
     var body: some View {
         HStack {
             KFImage(URL(string: pokemon.imageUrl))
@@ -54,6 +53,6 @@ struct PokemonCell: View {
 
 struct PokemonCell_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonCell(pokemon: .constant(MockData.pokemon), favoritesVM: FavoritesViewModel())
+        PokemonCell(pokemon: .constant(MockData.pokemon))
     }
 }

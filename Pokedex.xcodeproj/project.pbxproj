@@ -119,7 +119,6 @@
 			children = (
 				FD77D578266C059100745E18 /* Constants.swift */,
 				FD77D59E266D5C1200745E18 /* PokeError.swift */,
-				FD77D583266C13D200745E18 /* Managers */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -149,14 +148,6 @@
 				FD77D586266C143700745E18 /* MockData.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		FD77D583266C13D200745E18 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				FD77D5A0266D5C3300745E18 /* FavoritesViewModel.swift */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		FD77D588266C1E3600745E18 /* PokemonView */ = {
@@ -196,6 +187,7 @@
 		FD77D597266C428000745E18 /* FavoritesView */ = {
 			isa = PBXGroup;
 			children = (
+				FD77D5A0266D5C3300745E18 /* FavoritesViewModel.swift */,
 				FD77D598266C42CB00745E18 /* FavoritesView.swift */,
 			);
 			path = FavoritesView;

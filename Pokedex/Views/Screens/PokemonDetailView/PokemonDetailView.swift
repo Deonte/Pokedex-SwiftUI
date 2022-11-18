@@ -10,42 +10,46 @@ import Kingfisher
 
 struct PokemonDetailView: View {
     @Binding var pokemon: FavorablePokemon
-    @ObservedObject var favoritesVM: FavoritesViewModel
-    @Environment(\.dismiss) var dismiss
+    
+    enum Mode {
+       case normal
+       case favorite
+   }
+    @State var mode: Mode = .normal
+
     var body: some View {
         VStack {
-            KFImage(URL(string: pokemon.imageUrl))
-                .padding()
-            Image(pokemon.type.capitalized)
-            Text(pokemon.description.removeN())
-                .font(.body)
-                .padding()
-            Spacer()
-            FavoriteButton(pokemon: $pokemon, favoritesVM: favoritesVM)
+            if mode == .normal {
+                KFImage(URL(string: pokemon.imageUrl))
+                    .padding()
+                Image(pokemon.type.capitalized)
+                Text(pokemon.description.removeN())
+                    .font(.body)
+                    .padding()
+                Spacer()
+                FavoriteButton(pokemon: $pokemon)
+            } else if mode == .favorite {
+                KFImage(URL(string: pokemon.imageUrl))
+                    .padding()
+                Image(pokemon.type.capitalized)
+                Text(pokemon.description.removeN())
+                    .font(.body)
+                    .padding()
+                Spacer()
+            }
         }
         .navigationTitle(pokemon.name.capitalized)
-        .onChange(of: pokemon.isFavorite, perform: { newValue in
-            if newValue == false {
-                favoritesVM.removeFavorite(pokemon: pokemon)
-                dismiss()
-            } else if newValue == true {
-                favoritesVM.saveToFavorite(pokemon: pokemon)
-                dismiss()
-            }
-        })
     }
 }
 
 struct PokemonDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonDetailView(pokemon: .constant(MockData.pokemon), favoritesVM: FavoritesViewModel())
+        PokemonDetailView(pokemon: .constant(MockData.pokemon), mode: .normal)
     }
 }
 
 private struct FavoriteButton: View {
     @Binding var pokemon: FavorablePokemon
-    @ObservedObject var favoritesVM: FavoritesViewModel
-    
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
